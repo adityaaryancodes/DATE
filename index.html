@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Invitation ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ffafbd;
+            --deep-rose: #ff4b2b;
+            --soft-white: rgba(255, 255, 255, 0.9);
+            --glass: rgba(255, 255, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- Background Styling --- */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            /* Replace the URL below with her photo */
+            background: url('asset/nilima still.jpeg') no-repeat center center;
+            background-size: cover;
+            filter: blur(10px) brightness(0.6);
+            transform: scale(1.1); /* Prevents white edges from blur */
+        }
+
+        /* --- Floating Hearts --- */
+        #heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: var(--deep-rose);
+            font-size: 20px;
+            user-select: none;
+            animation: floatUp linear forwards;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* --- Section Layouts --- */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            background: white;
+            color: var(--deep-rose);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .btn:active { transform: scale(0.95); }
+
+        /* --- Photo Collage --- */
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin-top: 30px;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transform: rotate(var(--r));
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .caption {
+            color: #333;
+            font-family: 'Dancing Script', cursive;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* --- Final Section --- */
+        .choice-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        #final-message {
+            margin-top: 30px;
+            font-weight: 500;
+            font-size: 1.2rem;
+            min-height: 1.5em;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 480px) {
+            h1 { font-size: 2.5rem; }
+            .collage-grid { gap: 10px; }
+            .polaroid img { height: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container"></div>
+    <div id="heart-container"></div>
+
+    <section id="start">
+        <div class="fade-in">
+            <h1>Hey Niliii ❤️</h1>
+            <p>I made something for you...</p>
+            <button class="btn" onclick="scrollToNext('collage')">Click to see</button>
+        </div>
+    </section>
+
+    <section id="collage">
+        <div class="fade-in">
+            <h2>Our Little Moments</h2>
+            <div class="collage-grid">
+                <div class="polaroid" style="--r: -3deg">
+                    <img src="asset/nilima 1.jpeg" alt="Memory">
+                    <p class="caption">That smile... Which makes the world blind</p>
+                </div>
+                <div class="polaroid" style="--r: 2deg">
+                    <img src="asset/nilima 2.jpeg" alt="Memory">
+                    <p class="caption">Favorite way..... which makes everyone's day </p>
+                </div>
+                <div class="polaroid" style="--r: -2deg">
+                    <img src="asset/nilima kurti.jpeg" alt="Memory">
+                    <p class="caption">Tumhari hassi, jo bhar de jindagi me khushi</p>
+                </div>
+                <div class="polaroid" style="--r: 4deg">
+                    <img src="asset/Nilima Selfie.jpeg" alt="Memory">
+                    <p class="caption">Kuch acche waqt jo tumhare hone se hote h.....</p>
+                </div>
+                <div class="polaroid" style="--r: -4deg">
+                    <img src="asset/nilima sketch .jpeg" alt="Memory">
+                    <p class="caption">Tumhari wo sketch jo maine banayi h.......</p>
+                </div>
+                <div class="polaroid" style="--r: 1deg">
+                    <img src="asset/nilima 1.jpeg" alt="Memory">
+                    <p class="caption">OUT of everything.... You are special</p>
+                </div>
+            </div>
+            <button class="btn" onclick="scrollToNext('message')" style="margin-top: 40px;">Keep scrolling</button>
+        </div>
+    </section>
+
+    <section id="message">
+        <div class="fade-in" style="max-width: 80%;">
+            <h2>These moments made me realize something...</h2>
+            <p style="font-size: 1.4rem; line-height: 1.6;">Life feels soo good when you are around me.. I genuinly love the amount of time i spend with you by you ❤️</p>
+            <button class="btn" onclick="scrollToNext('final')">One last thing</button>
+        </div>
+    </section>
+
+    <section id="final">
+        <div class="fade-in">
+            <h1 style="font-size: 3rem;">Chai peene chalogi mere sath ???? ☕</h1>
+            <div class="choice-container">
+                <button class="btn" onclick="answer('yes')">☕ Yes</button>
+                <button class="btn" onclick="answer('maybe')">🙈 Maybe</button>
+            </div>
+            <p id="final-message"></p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // 1. Scroll Logic
+        function scrollToNext(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 2. Intersection Observer for Apple-style fade in
+        const observerOptions = { threshold: 0.3 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // 3. Floating Hearts Animation
+        function createHeart() {
+            const container = document.getElementById('heart-container');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // 2-5s
+            container.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 400); // Create heart every 400ms
+
+        // 4. Final Answer Logic
+        function answer(type) {
+            const display = document.getElementById('final-message');
+            if (type === 'yes') {
+                display.innerHTML = "Yay! Chai date confirmed ☕❤️";
+                display.style.color = "#fff";
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#ffafbd', '#ff4b2b', '#ffffff']
+                });
+            } else {
+                display.innerHTML = "I'll take that as a yes soon 😉";
+                display.style.color = "#ffafbd";
+            }
+        }
+    </script>
+</body>
+</html>
